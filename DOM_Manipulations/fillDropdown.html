@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fill Dropdown</title>
+    <!--<script src="dropdown.js"></script>-->
+</head>
+<body>
+<h1>Dropdown Menu</h1>
+<div>
+    <select id="menu"></select>
+</div>
+  <label for="newItemText">Text: </label><input type="text" id="newItemText" />
+  <label for="newItemValue">Value: </label><input type="text" id="newItemValue" />
+  <input type="button" value="Add" onclick="addItem()">
+
+  <script>
+    function addItem() {
+        let textInput = document.getElementById("newItemText");
+        let valueInput = document.getElementById("newItemValue");
+        
+        let newOpt = document.createElement("option");
+        newOpt.text = textInput.value;
+        newOpt.value = valueInput.value;
+
+        let menu = document.getElementById("menu");
+        menu.appendChild(newOpt);
+
+        textInput.value = "";
+        valueInput.value = "";
+    };
+  
+  </script>
+</body>
+</html>

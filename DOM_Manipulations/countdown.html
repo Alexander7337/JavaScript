@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="time" style="border:3px solid blue; text-align:center; font-size:2em;" disabled="true"/>
+    <script>
+        window.onload = function() { 
+            countdown(10); 
+        };
+
+        function countdown(inputTime){
+            let time = inputTime;
+            let field = document.getElementById('time');
+            let timer = setInterval(calc, 1000);
+
+            function calc(){
+                time--;
+                if (time === 0) {
+                    clearInterval(timer);
+                }
+                field.value = Math.floor(Number(time) / 60) + ':' + ('0' + Number(time) % 60).slice(-2);
+            };
+            
+        };
+    </script>
+
+</body>
+</html>
